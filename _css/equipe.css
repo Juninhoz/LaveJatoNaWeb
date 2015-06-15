@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+body {
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+}
+
+div#interface {
+	width: 900px;
+	background-color: #ffffff;
+	margin: -20px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	padding: 10px;
+}
+
+p {
+	text-align: justify;
+	text-indent: 50px;
+}
+
+header#cabecalho img#icone {
+	position: absolute;
+	left: 780px;
+	top: 30px;
+}
+header#cabecalho {
+	height: 150px;
+	background: url("../_imagens/Logo.png") no-repeat 120px 50px;
+}
+
+/*IMAGEM DA LAVANDERIA NO TOPO*/
+
+img.icone{
+	position: relative;
+	top: 10px;
+	left: 640px;
+}
+
+/* Formatacao do Menu */
+
+nav#menu {
+	display: block;
+	position: relative;
+	right: 250px;
+}
+
+nav#menu ul {
+	list-style: none;
+	text-transform: uppercase;
+	position: absolute;
+	top: -20px;
+	left: 300px;
+}
+
+nav#menu li {
+	display: inline-block;
+	background-color: #dddddd;
+	padding: 10px;
+	margin: 2px;
+	transition: background-color 1s;
+}
+
+nav#menu li:hover {
+	background-color: #606060;
+}
+
+nav#menu h1 {
+	display: none;
+}
+
+nav#menu a {
+	color: #000000;
+	text-decoration: none;
+}
+
+nav#menu a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+section#corpo {
+	display: block;
+	width: 520px;
+	float: left;
+	padding-right: 15px; 
+}
+
+aside#lateral {
+	padding-top: 50px;
+	display: block;
+	width: 350px;
+	float: right;
+}
+/* RDAPE DA PAGINA AKI  */
+
+footer#rodape {
+	clear: both;
+	height: 80px;
+}
+
+footer#rodape p {
+	text-align: center;
+	font-family: Verdana;
+	margin-top: 40px;
+}
+
+footer#rodape span{
+	padding: 5px;
+	border-radius: 5px 5px;
+}
+footer#rodape span:hover{
+	background-color: #6699FF;
+}
+div#centro{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 900px;
+	height:400px;
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+div#center_top{
+	height: 60px;
+	width: 540px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+div#center_top h3{
+	font-family: Verdana;
+	font-size: 20px;
+}
+div#membro1{
+	height: 150px;
+	width: 370px;
+	float: right;
+	margin-right: 55px;
+}
+div#membro2{
+	height: 150px;
+	width: 370px;
+	margin-left: 55px;
+	margin-bottom: 0;	
+}
+div#circulo{
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	margin-top: 10px;
+}
+div#circulo:hover{
+	border: 5px solid #6699FF;
+}
+
+div#circulo img{
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	position: absolute;	
+}
+div#info{
+	height: 40px;
+	width: 255px;
+	float: right;
+	margin-top: 30px;
+	border-radius: 0 5px 0 0;
+	background-color: #6699FF;
+}
+div#info p{
+	font-family: Verdana;
+	font-size: 14px;
+	text-indent: 20px;
+	color: white;
+}
+div#info2{
+	height: 40px;
+	width: 255px;
+	float: right;
+	border-radius: 0 0 5px 0;
+	position: relative;	
+	background-color: #BBBBB0;
+}
+div#info2 p{
+	font-family: Verdana;
+	color: white;
+	font-size: 12px;
+	margin-top: 7px;
+	text-indent: 20px;
+}
+hr.linha{
+	border: 2px solid;
+	margin-top: 20px;
+	color: #6699FF;
+	border-radius: 5px;
+}

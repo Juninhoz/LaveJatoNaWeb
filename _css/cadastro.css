@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+body {
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+}
+
+div#interface {
+	width: 900px;
+	background-color: #ffffff;
+	margin: -20px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	padding: 10px;
+}
+
+p {
+	text-align: justify;
+	text-indent: 50px;
+}
+
+hr.linha{
+	border: 2px solid;
+	margin-top: 20px;
+	color: #6699FF;
+	border-radius: 5px;
+}
+
+header#cabecalho img#icone {
+	position: absolute;
+	left: 780px;
+	top: 30px;
+}
+header#cabecalho {
+	height: 150px;
+	background: url("../_imagens/Logo.png") no-repeat 120px 60px;
+}
+
+/*IMAGEM DA LAVANDERIA NO TOPO*/
+
+img.icone{
+	position: relative;
+	top: 10px;
+	left: 640px;
+}
+
+/* Formatacao do Menu */
+
+nav#menu {
+	display: block;
+	position: relative;
+	right: 250px;
+}
+
+nav#menu ul {
+	list-style: none;
+	text-transform: uppercase;
+	position: absolute;
+	top: -20px;
+	left: 300px;
+}
+
+nav#menu li {
+	display: inline-block;
+	background-color: #dddddd;
+	padding: 10px;
+	margin: 2px;
+	transition: background-color 1s;
+}
+
+nav#menu li:hover {
+	background-color: #606060;
+}
+
+nav#menu h1 {
+	display: none;
+}
+
+nav#menu a {
+	color: #000000;
+	text-decoration: none;
+}
+
+nav#menu a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+section#corpo {
+	display: block;
+	width: 520px;
+	float: left;
+	padding-right: 15px; 
+}
+
+aside#lateral {
+	padding-top: 50px;
+	display: block;
+	width: 350px;
+	float: right;
+}
+
+footer#rodape {
+	clear: both;
+	height: 80px;
+}
+footer#rodape span{
+	padding: 5px;
+	border-radius: 5px 5px;
+}
+footer#rodape span:hover{
+	background-color: #6699FF;
+}
+footer#rodape p {
+	text-align: center;
+	font-family: Verdana;
+	margin-top: 40px;
+}
+div#centro{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 800px;
+}
+
+form{
+	margin-left: 20px;
+	padding-top: 20px;
+	
+}
+form label{
+	font-family: Verdana;
+	margin-left: 20px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 0px 15px 0px 0px;
+	background-color: #6699FF;
+	color: white;
+}
+form input.digit{
+	margin-top:4px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	padding: 5px;
+	border-radius: 5px 5px;	
+}
+form input.digit:focus{
+	border: 3px solid #6699FF;
+}
+div#centro h3{
+	margin-top: 0px;
+	margin-left: 70px;
+	width: 225px;
+	font-family: Verdana;
+}
+
+input.botao_enviar{
+	margin-left: 20px;
+	margin-top: 15px;
+	margin-right: 15px;
+	font-family: verdana;
+	padding: 10px;	
+}
+
+input.botao_enviar:active{
+	background-color: green;
+	color: white;	
+}
+input.botao_limpar{
+	font-family: verdana;
+	padding: 10px;
+}
+input.botao_limpar:active{
+	background-color: red;
+	color: white;
+}
+
+/*CSS DO JAVASCRIPT DAS IMAGENS E TALZ*/
+
+img#img00{
+    position: relative;
+    top: 6px;
+}
+
+img#img01{
+    position: relative;
+    top: 8px;
+}
+
+img#img02{
+    position: relative;
+    top: 8px;
+}
+
+img#img03{
+    position: relative;
+    top: 8px;
+}
+
+img#img04{
+    position: relative;
+    top: 8px;
+}
+

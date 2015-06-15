@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+body {
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+}
+
+div#interface {
+	width: 900px;
+	background-color: #ffffff;
+	margin: -20px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	padding: 10px;
+}
+p {
+	text-align: justify;
+	text-indent: 50px;
+}
+header#cabecalho img#icone {
+	position: absolute;
+	left: 780px;
+	top: 30px;
+}
+
+hr.linha{
+	border: 2px solid;
+	margin-top: 20px;
+	color: #6699FF;
+	border-radius: 5px;
+}
+
+header#cabecalho {
+	height: 150px;
+	background: url("../_imagens/Logo.png") no-repeat 120px 60px;
+}
+
+/*IMAGEM DA LAVANDERIA NO TOPO*/
+
+img.icone{
+	position: relative;
+	top: 10px;
+	left: 640px;
+}
+
+/* Formatacao do Menu */
+
+nav#menu {
+	display: block;
+	position: relative;
+	right: 250px;
+}
+
+nav#menu ul {
+	list-style: none;
+	text-transform: uppercase;
+	position: absolute;
+	top: -20px;
+	left: 300px;
+}
+
+nav#menu li {
+	display: inline-block;
+	background-color: #dddddd;
+	padding: 10px;
+	margin: 2px;
+	transition: background-color 1s;
+}
+
+nav#menu li:hover {
+	background-color: #606060;
+}
+
+nav#menu h1 {
+	display: none;
+}
+
+nav#menu a {
+	color: #000000;
+	text-decoration: none;
+}
+
+nav#menu a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+/* SEÇAO DO CORPO AKI  */
+
+section#corpo {
+	display: block;
+	width: 520px;
+	height: 470px;
+	float: left;
+	padding-right: 15px; 
+	margin-bottom: 10px;
+}
+section#corpo p{
+	line-height: 24px;
+}
+section#corpo span:hover{
+	color: #6699FF;
+}
+section#corpo a{
+	text-decoration: none;
+	color: black;
+}
+section#corpo a:hover{
+	color: #6699FF;
+}
+section#corpo ul{
+	font-family: Verdana;
+}
+
+aside#lateral {
+	padding-top: 50px;
+	display: block;
+	width: 350px;
+	float: right;
+}
+/* RDAPE DA PAGINA AKI  */
+
+footer#rodape {
+	clear: both;
+	height: 80px;
+}
+footer#rodape span{
+	padding: 5px;
+	border-radius: 5px 5px;
+}
+footer#rodape span:hover{
+	background-color: #6699FF;
+}
+footer#rodape p {
+	text-align: center;
+	font-family: Verdana;
+	margin-top: 40px;
+}
+div#info{
+	border: 1px solid;
+	margin-left: 20px;
+	height: 450px;
+	width: 490px;
+	margin-top: 10px;
+}
+
+section#corpo h2{
+	text-align: center;
+	font-family: verdana;
+}
+section#corpo p{
+	margin-left: 10px;
+	font-family: Verdana;
+}
+
+/* AQUI EH O FIELDSET PRA O FORMULARIO */
+
+fieldset{
+	font-family: Verdana;
+	margin-top: -30px;
+	border: 3px solid  #6699FF;
+}
+fieldset legend{
+	border: 3px solid  #6699FF;
+	border-radius: 5px 5px;
+	padding: 4px;
+	margin: auto;
+}
+fieldset p{
+	font-family: Verdana;
+	font-size: 14px;
+	text-indent: 0px;	
+}
+fieldset p.op{
+	padding: 5px;
+	border: 1px solid;
+	width: 120px;
+	border-radius: 5px;
+	float: left;
+	margin-right: 10px;
+}
+input.teste{
+	height: 15px;
+	width: 15px;
+	padding: 20px;
+}
+fieldset button{
+    margin-top: 20px;
+	padding: 6px;
+	margin-right:10px;
+	border-radius:5px 5px;
+}
+fieldset a{
+	text-decoration: none;
+}
+fieldset a:hover{
+	color: red;
+}
+fieldset button:active{
+	background-color:#6699FF;
+	color: white;
+	border-radius: 5px 5px;
+}
+label{
+	font-family: Verdana;
+	padding: 5px 5px 5px 10px;	
+	border-radius: 5px 5px;
+	border: 1px solid black;
+	color: white;
+	background-color: #6699FF;
+}
+label.senha{
+	margin-top: 10px;
+	padding: 5px 5px 5px 20px;
+	position: relative;
+	top: 5px;
+}
+label img{
+	position: relative;
+	top: 6px;
+	right: 4px;
+}
+label.senha img{
+	position: relative;
+	top: 5px;
+	right: 15px;
+}
+fieldset input{
+	padding: 6px 0px 6px 6px;
+	margin-top: 5px;
+}
+input.senha{
+	position: relative;
+	top: 3px;
+}

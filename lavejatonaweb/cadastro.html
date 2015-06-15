@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Projeto FPIN</title>
+		<link rel="stylesheet" type="text/css" href="..\_css\cadastro.css"/>
+        
+        <script type="text/javascript" src="js\\js.js">
+        </script>    
+	</head>
+    <body>
+		<div id="interface">    
+			<header id="cabecalho">
+				
+				<nav id="menu">
+					<h1>Menu Principal</h1>
+					<ul>
+						<li><a href="..\index.html">INÍCIO</a></li>
+						<li><a href="servicos.html">SERVIÇOS</a></li>
+						<li><a href="equipe.html">EQUIPE</a></li>
+						<li><a href="duvidas.html">DUVIDAS?</a></li>        
+					</ul>        
+				</nav>
+				<img class="icone" src="..\_imagens\laundry.png"/>
+			</header>
+			<hr class="linha">
+			<section id="corpo">
+				
+				<div id="centro">
+				
+					<h3>Cadastro de usuário</h3>
+					
+					<form name="cadastro_user" action="..\PHP\cadastro_usuario.php" method="post">
+					
+                    <label>Nome:</label><br><input onchange="ValidaCampoNome('name');ativarEnvio();" id="name" class="digit" type="text" size="40" name="Nome_usuario">
+                        <img src="" id="img00">  
+                    <br>   
+					<label>Senha:</label><br><input onchange="ValidaCampoSenha('password');ativarEnvio();" id="password" class="digit" type="password" size="40" name="Senha_usuario">
+                     <img src="" id="img01">  
+                    <br>
+					<label>Confirme sua senha:</label><br><input onchange="VerificaCampoSenha('confirmPassword');ativarEnvio();" id="confirmPassword" class="digit" type="password" size="40" name="Senha_confirm">
+                        <img src="" id="img02">
+                        <br>
+					<label>Email:</label><br><input onchange="ValidaCampoEmail('email');ativarEnvio()" id="email" class="digit" type="text" size="40" name="Email_usuario">
+                    <img src="" id="img03">    
+                    <br>
+					<label>Digite novamente o Email:</label><br><input onchange="VerificaCampoEmail('confirmEmail');ativarEnvio();" id="confirmEmail" class="digit" type="text" size="40" name="Email_confirm">
+                        <img src="" id="img04">
+                        <br>
+					<label>Sexo:</label><input type="radio" name="sexo" value="masculino" checked>Masculino</input>
+					
+                    <input type="radio" name="sexo" value="feminino">Feminino</input><br>
+					<input id="input_envio" class="botao_enviar" type="submit" name="Enviar_dados" value="Cadastrar-se" disabled="disabled"></input>
+					<input class="botao_limpar" type="reset" name="Limpar_dados" value="Limpar Formulario" onclick="limparReg()"></input>
+					
+					</form>
+				
+				</div>
+				
+			</section>
+			
+			<footer id="rodape">
+			<hr class="linha">
+				<p>Copyright © <span>Junior</span> | <span>Alexandre</span> | <span>Matteus</span> | <span>Marcelo</span> | FPIN</p> 
+			</footer>
+        </div>
+    </body>
+</html>

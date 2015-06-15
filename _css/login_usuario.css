@@ -1,0 +1,556 @@
+@charset "UTF-8";
+
+body {
+	background-color: #dddddd;
+	color: rgba(0,0,0,1);
+}
+div#interface {
+	width: 900px;
+	background-color: #ffffff;
+	margin: -20px auto 0px auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+	padding: 10px;
+}
+
+p {
+	text-align: justify;
+	text-indent: 50px;
+}
+
+header#cabecalho img#icone {
+	position: absolute;
+	left: 780px;
+	top: 30px;
+}
+
+header#cabecalho {
+	height: 150px;
+	background: url("../_imagens/Logo.png") no-repeat 120px 60px;
+}
+
+hr.linha{
+	border: 2px solid;
+	margin-top: 20px;
+	color: #6699FF;
+	border-radius: 5px;
+}
+/*IMAGEM DA LAVANDERIA NO TOPO*/
+
+img.icone{
+	position: relative;
+	top: 10px;
+	left: 640px;
+}
+/* Formatacao do Menu */
+
+nav#menu {
+	display: block;
+	position: relative;
+	right: 250px;
+}
+
+nav#menu ul {
+	list-style: none;
+	text-transform: uppercase;
+	position: absolute;
+	top: -20px;
+	left: 300px;
+}
+
+nav#menu li {
+	display: inline-block;
+	background-color: #dddddd;
+	padding: 10px;
+	margin: 2px;
+	transition: background-color 1s;
+}
+nav#menu li:hover {
+	background-color: #606060;
+}
+nav#menu h1 {
+	display: none;
+}
+nav#menu a {
+	color: #000000;
+	text-decoration: none;
+}
+nav#menu a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+section#corpo {
+	display: block;
+	width: 520px;
+	float: left;
+	padding-right: 15px; 
+}
+aside#lateral {
+	padding-top: 50px;
+	display: block;
+	width: 350px;
+	float: right;
+}
+footer#rodape {
+	clear: both;
+	height: 80px;
+}
+footer#rodape span{
+	padding: 5px;
+	border-radius: 5px 5px;
+}
+footer#rodape span:hover{
+	background-color: #6699FF;
+}
+footer#rodape p {
+	text-align: center;
+	font-family: Verdana;
+	margin-top: 40px;
+}
+div#meio{
+	height: 500px;
+	width: 900px;
+	margin-top: 10px;
+	margin-bottom: -10px;
+	
+}
+div#op_serv{
+	margin-top: 10px;
+	height: 520px;
+	width: 250px;
+	border-radius: 10px 0 0 10px;
+	background-color: #F3F3EC ;	
+	
+}
+nav#menu_op ul{
+	list-style: none;
+	float: left;
+	width: 100%;
+	padding: 0px;
+	margin-top: 10px;
+}
+nav#menu_op li{
+	text-align: left;
+	margin-top: 10px;
+	border-radius: 5px 0 0 5px;
+	padding: 7px 5px 7px 5px;
+	font-family: Verdana;	
+
+}
+nav#menu_op a{
+	text-decoration: none;
+	color: black;	
+}
+
+nav#menu_op li:hover{
+	 background-color:#6699FF;	
+}
+
+div#info_usuario{
+	height: 520px;
+	width: 640px;
+	float: right;
+	background-color: #F3F3EC;
+	margin-bottom: 20px;
+	
+}
+
+div#noticias_01{
+	height: 308px;
+	float: left;
+	width: 310px;
+	margin-top: 15px;
+	background-color: #F3F3EC;
+}
+div#noticias_02{
+	height: 308px;
+	width: 310px;
+	float: right;
+	margin-top: 15px;
+	background-color: #F3F3EC;
+}
+div#noticias_02 h3{
+	text-align: center;
+	border: 1px solid;
+	padding:10px;
+	margin-top: 0;
+	background-color:#FF6600;
+	color: white;
+}
+div#noticias_01 h3{
+	text-align: center;
+	border: 1px solid;
+	padding:10px;
+	margin-top: 0;
+	background-color:#E60000;
+	color: white;
+}
+
+div#destaque{
+	height: 225px;
+	width: 240px;
+	margin-left: 30px;
+	border-radius:5px 5px 0 0;
+	background-color: white;
+}
+div#noticias{
+	height: 225px;
+	width: 240px;
+	margin-left: 40px;
+	margin-top: 10px;
+	border-radius:5px 5px 0 0;
+	background-color: white;
+}
+img.destaque{
+	margin-left: 75px;
+	margin-top: 20px;
+}
+div#destaque p{
+	font-size: 16px;
+	text-align: left;
+}
+div#destaque p:hover{
+	color: #6699FF;
+}
+div#not_1{
+	margin: 10px 10px 10px 10px;
+	height: 75px;
+	width: 220px;
+}
+div#not_2{
+	float: right;
+	height: 60px;
+	width: 130px;
+	margin-top: 10px;
+	margin-right: 5px;
+}
+div#not_1 h4{
+	width: 50px;
+	padding: 7px;
+	margin-top: 10px;
+	margin-left: 10px;
+	text-align: center;
+	background-color: #8ACFE6;
+	color: white;
+	border-radius: 5px 5px;
+	position: absolute;
+}
+div#not_2 p{
+	text-align: left;
+	margin: 0 0 0 0;
+	text-indent: 0px;
+}
+
+div#info_usuario h3{
+	margin-top: -20px;
+	font-family: Verdana;
+	text-align: center;
+}
+
+div#legenda {
+	margin-top: 40px;
+	margin-left: 20px;
+	height: 100px;
+	width: 300px;
+}
+div#legenda h4{
+	margin: auto;
+	text-align: left;
+	font-family: verdana;
+}
+div#legenda p{
+	text-indent: 2px;
+	font-family: verdana;
+	font-size: 14px;
+}
+/* FORMULARIO NAME = FORM_01*/
+
+div#info_usuario form.um{
+	height: 350px;
+	width: 600px;
+	margin: auto;
+	font-family: verdana;
+}
+div#info_usuario form.um legend{
+	margin-top: 40px;
+	margin-left: 20px;
+	padding: 3px;
+	border-radius: 5px 5px;
+	background-color:#6699FF;
+}
+form.um input.butom_01{
+	margin-top: 10px;
+	margin-left: 20px;
+	padding: 8px;
+}
+form.um input.butom_02{
+	margin-left: 10px;
+	padding: 8px;
+}
+
+div#info_usuario form.dois{
+
+}
+
+/* TABELA ACOMPANHAMENTO */
+
+div#info_usuario table{
+	border: 1px solid;
+	margin: auto;
+	margin-top: 20px;
+}
+div#info_usuario td{
+	border: 1px solid;
+	padding: 12px;
+	font-family: verdana;
+	font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+div#info_usuario th{
+	border: 1px solid;
+    padding: 10px;
+    font-family: verdana;
+}
+
+div#info_usuario hr.primeira{
+	width: 600px;
+	margin: auto;
+	border: 2px dashed #6699FF;
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+/* PAGINAS DO PAGAMENTO AQUI */
+
+div#info_usuario h4{
+	font-family: verdana;
+	text-align: center;
+}
+div#op_boleto{
+	border: 1px dashed;
+	border-radius: 5px 5px;
+	height: 100px;
+	width: 250px;  
+    margin-left: 40px;
+}
+div#op_boleto img{
+	position: relative;
+	top: 20px;
+	left: 10px;
+}
+div#op_cartao{
+    float: right;
+	border: 1px dashed;
+	border-radius: 5px 5px;
+	height: 100px;
+	width: 250px;
+    margin-right: 40px;
+}
+div#op_cartao img{
+	position: relative;
+	top: 20px;
+	left: 10px;
+}
+div#text.um{
+    
+    height: 50px;
+    width: 180px;
+    position: relative;
+    bottom: 55px;
+}
+div#text{
+	border-left: 1px solid;
+    height: 50px;
+    width: 180px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+div#text_02 p{
+	font-family: Verdana;
+	text-indent: 10px;
+	font-size: 18px;
+}
+div#text p{
+	font-family: Verdana;
+	text-indent: 10px;
+	font-size: 18px;
+}
+
+div#op_cartao:hover{
+	border: 3px solid #6699FF;
+}
+
+div#op_boleto:hover{
+	border: 3px solid #6699FF;
+}
+
+/* FORMULARIOS PAGAMENTOS */
+
+form.pgt_cartao{
+	border: 3px solid #6699FF;
+	width: 637px;
+	height: 260px;
+	font-family: Verdana;
+}
+form.pgt_cartao legend{
+	border: 1px solid;
+	padding: 3px;
+	border-radius: 5px 5px;
+	margin-left: 10px;
+	margin-top: -10px;
+	background-color: #6699FF;
+	
+}
+form.pgt_cartao label{
+	padding: 5px;
+	border: 1px solid;
+	margin-left: 20px;
+	border-radius: 5px 0px 0px 5px;
+	background-color: #6699FF;
+}
+
+form.pgt_cartao input{
+	margin-top: -20px;
+	margin-bottom: 14px;
+	padding: 7px 5px 5px 5px;
+	border-radius: 0px 5px 5px 0px;
+	border: 1px solid;
+}
+
+form.pgt_cartao input:focus{	
+	background-color: yellow;
+}
+form input.submit{
+	margin-left: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border-radius: 5px 5px;
+}
+form input.submit:focus{
+	background-color: red;
+}
+/* IMAGENS DO USUARIO */
+
+img.uusuario{
+	position: relative;
+	top: 20px;	
+	left: 30px;
+}
+
+img.imgserviço{
+position: relative;
+	top: 20px;	
+	left: 150px;
+}
+img.alterar{
+	position: relative;
+	top: 20px;	
+	left: 190px;
+}
+
+img.imgacompanhamento{
+	position: relative;
+	top: 20px;	
+	left: 100px;
+}
+
+img.imgpagamento{
+position: relative;
+	top: 20px;	
+	left: 140px;
+}
+
+/* CSS DO ALTERAR DADOS DO USUARIO */
+
+form.dois{
+	
+	height: 300px;
+	width: 400px;
+}
+form.dois label{
+	
+	padding: 4px;
+	margin-left: 20px;
+	background-color: #6699FF;
+}
+form.dois input{
+	margin-top: 10px;
+	margin-bottom: 5px;
+	padding: 6px 0px 3px 0px;
+}
+input.dois{
+	margin-left: 20px;
+}
+
+
+/*IMAGEEEENSSS FULEIRASS DO JAVASCRIPT*/
+
+img.js{
+    margin-top: 20px;   
+}
+
+form.um label{
+    position: relative;
+    top: -10px;
+}
+
+input#buscar{
+    position: relative;
+    top: 7px;
+    height: 50px;
+    width: 20px;
+}
+
+input#entregar_roup{
+    position: relative;
+    top: 7px;
+    height: 50px;
+    width: 20px;
+}
+
+input#lavar_roup{
+    position: relative;
+    top: 7px;
+    height: 50px;
+    width: 20px;
+}
+
+input#passar_roup{
+    position: relative;
+    top: 7px;
+    height: 50px;
+    width: 20px;
+}
+
+
+/*CSS DO PHP */
+
+a.sessao{
+    font-size: 10px;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 5px 5px;
+}
+
+label#valorr{
+    margin-top: 10px;
+    color: blue;
+    margin-left: 5px;
+}
+
+label#valorrr{
+    margin-top: 10px;
+    color: blue;
+}
+
+input#teste{
+    position: relative;
+    top: -12px;
+}
+
+img#label_preco{
+    margin-left: 155px;
+}
+
+

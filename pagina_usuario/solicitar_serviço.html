@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <script type="text/javascript" src="js/js.js">
+        </script> 
+		<meta charset="UTF-8"/>
+		<title>Projeto FPIN</title>
+		<link rel="stylesheet" type="text/css" href="..\_css\login_usuario.css"/>
+	</head>
+    <body>
+		<div id="interface">    
+			<header id="cabecalho">
+				
+				<nav id="menu">
+					<h1>Menu Principal</h1>
+					<ul>
+						<li><a href="..\index.html">INÍCIO</a></li>
+						<li><a href="..\lavejatonaweb\servicos.html">SERVIÇOS</a></li>
+						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
+						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 	
+					</ul>        
+				</nav>
+				<img class="icone" src="..\_imagens\laundry.png"/>
+			</header>
+			<hr class="linha">
+			<section id="corpo">
+				<div id="meio">
+								<div id="info_usuario">
+									
+									<img class="imgserviço" src="..\_imagens\serviço.png"/>
+									<h3>Solicitar Serviços.</h3>
+									<hr class="primeira">
+									
+									<form class="um" action="..\PHP\pedido.php" method="post" name="form_01"> 
+									
+									<img id="coletar" class="js" src="js/coletar.png"/>
+                                    <input id="buscar" type="checkbox" name="Buscar_roupa" onclick="if(this.checked){mudarImagemColetar('coletar')}else{mudarColetar('coletar')}"/><label>Coletar roupas.(R$1.00 por KG)</label><br>
+									
+                                    <img id="entregar" class="js" src="js/entregar.png"/>  
+                                    <input id="entregar_roup" type="checkbox" name="Entregar_roupa" onclick="if(this.checked){mudarImagemEntregar('entregar')}else{mudarEntregar('entregar')}"/><label>Entregar Roupas.(R$2.00 por KG)</label><br>	
+									
+									<img id="lavar" class="js" src="js/lavar.png"/>
+									<input id="lavar_roup" type="checkbox" name="lavar_roupa" onclick="if(this.checked){mudarImagemLavar('lavar')}else{mudarLavar('lavar')}"/><label>Lavar Roupa.(R$3.00 por KG)</label><br>
+									
+                                    <img id="passar" class="js"src="js/passar.png"/>
+                                    <input id="passar_roup" type="checkbox" name="Passar_roupa" onclick="if(this.checked){mudarImagemPassar('passar')}else{mudarPassar('passar')}"/><label>Passar Roupa.(R$7.00 por KG)</label><br>
+									<br>
+									Quantidade de Roupas em KG :<input id="quant_kg" type="text" name="quant_kg" size="5"/>
+                                    
+                                    <input id="valor" type="button" name="valor" value="Calcular Valor" onclick="calculaValor(),exibeValor('teste','valorr','valorrr','label_preco')"/><br><br>
+                                        
+                                        <img id="label_preco" src="js\label_preco.png" style="display:none"/>
+                                        <label id="valorr" style="display:none">Valor :</label><input id="teste" type="text" name="teste" size="5" style="display:none" disabled/><label id="valorrr" style="display:none">R$</label><br>
+                                        
+                                        
+                                    
+                                    <input id="enviar" class="butom_01" type="submit" name="enviar_dados" value="Enviar" disabled="disabled"/>
+									<input class="butom_02" type="reset" name="limpar_dados" value="Limpar" onclick="resetar('coletar','entregar','lavar','passar','label_preco','valorr','teste','valorrr')"/>	
+									</form>	
+									
+								</div>
+					<div id="op_serv">
+						
+					<nav id="menu_op" >
+					<ul>
+						<a href="pagina_usuario.php"><li>Pagina inicial</li></a>
+						<li style="background-color: #6699FF">Solicitar Serviços</li>
+						<a href="Acomp_pedidos.html"><li>Acompanhamento de Pedidos</li></a>
+						<a href="op_pagamento.html"><li>Opçoes de Pagamento</li></a>
+						<a href="alterar_dados.html"><li>Alterar Dados</li></a>
+						
+					</ul>
+					</nav>
+					
+					</div>
+				
+				</div>
+			</section>
+			<aside id="lateral">
+				
+			</aside>
+			<footer id="rodape">
+			<hr class="linha">
+				<p>Copyright © <span>Junior</span> | <span>Alexandre</span> | <span>Matteus</span> | <span>Marcelo</span> | FPIN</p> 
+			</footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+LaveJatoNaWeb versao 1.0 25/05/2015
+
+--> informaçôes gerais <----------------------------------------------------
+
+desenvolvido por Jose da Silva duda junior, matteus viana, alexandre henrique, remmyson khristian.
+para obtençao de nota para a materia fundamentos de programaçao internet.
+
+------------------------------------------------------------------------------
+
+--> informaçoes para o  usuario <-------
+
+Ao inserir a url do LaveJatoNaWeb o usuario ira ter uma breve introduçao do que é o LaveJatoNaWeb, posteriormente ira criar
+um cadastro para obter mais privilegios com relaçao aos serviços.
+
+na sua pagina inicial, o cliente ira observar algumas noticias e novidades com relaçao aos serviços e ao sistema, poderá 
+realizar pedidos, acompanhalos, e realizar o pagamento sempre no ambiente virtual com segurança e comodidade.
+
+ 
+
+--> informaçoes para o funcionario <-------
+
+Para acessar o sistema no modo de funcionario basta usar o nome de usuario ADMIN e a senha ADMIN e acompanhar tudo a respeito 
+dos pedidos e dos usuarios do sistema.
