@@ -65,11 +65,9 @@ function calculaValor(){
 
 function exibeValor(id,id2,id3,id4){
     if(document.getElementById(id).style.display == "none"){
-        
         document.getElementById(id).style.display = "inline";
         document.getElementById(id2).style.display = "inline";
         document.getElementById(id3).style.display = "inline";
-        
         document.getElementById(id4).style.display = "inline";
     }
     else{
@@ -89,7 +87,72 @@ function resetar(id,id2,id3,id4,id5,id6,id7,id8){
     document.getElementById(id5).style.display = "none";
     document.getElementById(id6).style.display = "none";
     document.getElementById(id7).style.display = "none";
-    document.getElementById(id8).style.display = "none";
-    
+    document.getElementById(id8).style.display = "none";    
+}
+
+var nome;
+var numero;
+var data;
+var codseg;
+
+function validaNome(id){ 
+    if(document.getElementById(id).value.length < 10){
+        document.getElementById("valida_noum").src = "js\\cartao_fail.png";
+        nome = false;
+    }else{
+         document.getElementById("valida_noum").src = "js\\cartao.png";
+        nome = true;
+    }
+}
+function validaNumero(id){
+    if(document.getElementById(id).value.length < 16){
+        document.getElementById("valida_card").src = "js\\cartao_fail.png";
+        numero = false;
+    }else{
+        document.getElementById("valida_card").src = "js\\cartao.png";
+        numero = true;
+    }
+}
+
+function validaData(id){
+     if(document.getElementById(id).value.length > 8){
+         document.getElementById("dati").src = "js\\cartao_fail.png";
+         data = false
+     }else{
+     document.getElementById("dati").src = "js\\cartao.png";
+     data = true;
+     }
+}
+
+
+function validaSeg(id){
+    if(document.getElementById(id).value.length < 3 || document.getElementById(id).value == 000){
+    document.getElementById("seg").src = "js\\cartao_fail.png";
+        cod_seg = false;
+    }else{
+    document.getElementById("seg").src = "js\\cartao.png";
+    cod_seg = true;
+    }
+}
+
+function resetarTudo(){
+    document.getElementById("dono_card").style.backgroundColor = "";
+    document.getElementById("number_card").style.backgroundColor = "";
+    document.getElementById("cod_seg").style.backgroundColor = "";
+    document.getElementById("date_valid").style.backgroundColor = "";
+    document.getElementById("valida_noum").src = "";
+    document.getElementById("valida_card").src = "";
+    document.getElementById("dati").src = "";
+    document.getElementById("seg").src = "";
+     document.getElementById("botao_princ").disabled = true;
+}
+
+function ativarBotao(){
+    if(nome == true && numero == true && data == true && cod_seg == true){
+        document.getElementById("botao_princ").disabled = false;
+    }
+    else{
+    document.getElementById("botao_princ").disabled = true;
+    }
 }
 

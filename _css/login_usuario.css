@@ -464,25 +464,37 @@ position: relative;
 /* CSS DO ALTERAR DADOS DO USUARIO */
 
 form.dois{
-	
 	height: 300px;
-	width: 400px;
+	width: 500px;
+    
 }
 form.dois label{
-	
 	padding: 4px;
 	margin-left: 20px;
+    margin-top: 20px;
 	background-color: #6699FF;
+    font-family: Verdana;
+    border-radius: 5px 0 0 5px;
 }
 form.dois input{
 	margin-top: 10px;
 	margin-bottom: 5px;
 	padding: 6px 0px 3px 0px;
 }
-input.dois{
+form.dois input.sub{
 	margin-left: 20px;
+    padding: 10px;
 }
 
+input#change_nome{
+    margin-left: 5px;
+}
+input#change_password{
+    margin-left: 5px;
+}
+input#test_password{
+    margin-left: 5px;
+}
 
 /*IMAGEEEENSSS FULEIRASS DO JAVASCRIPT*/
 
@@ -528,9 +540,16 @@ input#passar_roup{
 
 a.sessao{
     font-size: 10px;
+    padding: 3px;
     text-decoration: none;
-    border: 1px solid;
+    color: red;
     border-radius: 5px 5px;
+}
+
+a.sessao:hover{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
 }
 
 label#valorr{

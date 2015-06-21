@@ -6,9 +6,12 @@
     
     session_start();
     if(!isset($_SESSION['nome_usuario']) || !isset($_SESSION['senha_usuario'])){
-        header("Location: ..\\index.html");
+        header("Location: ..\\index.php");
         exit;
     }
+
+
+    $data = date("d");
 ?>
 
 <html>
@@ -24,8 +27,8 @@
 				<nav id="menu">
 					<h1>Menu Principal</h1>
 					<ul>
-						<li><a href="..\index.html">INÍCIO</a></li>
-						<li><a href="..\lavejatonaweb\servicos.html">SERVIÇOS</a></li>
+						<li><a href="..\index.php">INÍCIO</a></li>
+						<li><a href="..\lavejatonaweb\servicos.php">SERVIÇOS</a></li>
 						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
 						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 						
 					</ul>        
@@ -38,8 +41,13 @@
 				
 								<div id="info_usuario">
 									<img class="uusuario" src="..\_imagens\uusuario.png"/>
-									<h3>Bem Vindo(a)! <?php echo $_SESSION['nome_usuario'];echo " <a class='sessao' href='..\\PHP\\logout.php'>Finalizar Sessão</a>"?></h3>
-									<hr class="primeira">
+									<h3>Bem Vindo(a)! <?php $nome = $_SESSION['nome_usuario'];
+                                                        $nome = ucfirst(strtolower($nome));
+                                                        echo $nome;                  
+                                                        echo " <a class='sessao' href='..\\PHP\\logout.php'>Finalizar Sessão</a>"
+                                                       ?></h3>
+									
+                                    <hr class="primeira">
 									
 									<div id="noticias_02">
 									<h3>DESTAQUE</h3>
@@ -56,7 +64,7 @@
 									<div id="not_1">
 									<!--NOTICIA 1-->
 									
-									<h4>25 Abril</h4>
+									<h4><?php echo $data?><br>Junho</h4>
 									<div id="not_2">
 									<p>Estar com as 10 paginas prontas</p>
 									</div>
@@ -64,7 +72,8 @@
 									<hr>
 									<div id="not_1">
 									<!--NOTICIA 2-->
-									<h4>29 Abril</h4>
+									<h4><?php $dataalt = $data + 1;
+                                                echo $dataalt;?><br>Junho</h4>
 									<div id="not_2">
 									<p>Entregar as 10 paginas</p>
 									</div>

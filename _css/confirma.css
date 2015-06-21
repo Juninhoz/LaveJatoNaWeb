@@ -146,7 +146,7 @@ nav#menu_op li:hover{
 }
 
 div#info_usuario{
-	height: 520px;
+	height: 480px;
 	width: 900px;
 	margin: auto;
 	background-color: #F3F3EC;
@@ -163,6 +163,30 @@ div#confirmacao{
     margin: auto;
 }
 
+div#falha{
+    position: relative;
+    top: 40px;
+    border: 3px solid red;
+    border-radius: 15px 15px;
+    height: 100px;
+    width: 600px;
+    margin: auto;
+}
+
+span.falhaa{
+    font-family: Verdana;
+    font-size: 30px;
+    color: red;
+    position: relative;
+    left: 180px;
+}
+
+img#falhar{
+    position: relative;
+    top: 20px;
+    right: 300px;
+}
+
 img#sucesso{
     margin-top: 17px;
     margin-left: 15px;
@@ -176,3 +200,6 @@ span.sucess{
     top: -20px;
     left: 20px;
 }
+
+
+

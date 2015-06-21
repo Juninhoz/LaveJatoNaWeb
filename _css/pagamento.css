@@ -115,7 +115,7 @@ div#meio{
 }
 div#op_serv{
 	margin-top: 10px;
-	height: 520px;
+	height: 640px;
 	width: 250px;
 	border-radius: 10px 0 0 10px;
 	background-color: #F3F3EC ;	
@@ -146,7 +146,7 @@ nav#menu_op li:hover{
 }
 
 div#info_usuario{
-	height: 520px;
+	height: 640px;
 	width: 640px;
 	float: right;
 	background-color: #F3F3EC;
@@ -391,15 +391,14 @@ form.pgt_cartao{
     margin-top: 20px;
 	border: 3px solid #6699FF;
 	width: 637px;
-	height: 260px;
+	height: 360px;
 	font-family: Verdana;
 }
 form.pgt_cartao legend{
 	border: 1px solid;
 	padding: 3px;
 	border-radius: 5px 5px;
-	margin-left: 10px;
-	margin-top: 10px;
+	margin: auto;
 	background-color: #6699FF;
 }
 form.pgt_cartao label{
@@ -411,25 +410,37 @@ form.pgt_cartao label{
 	background-color: #6699FF;
 }
 
+form.pgt_cartao h5{
+    font-family: verdana;
+    margin-left: 10px;
+}
+
 form.pgt_cartao input{
 	margin-top: -20px;
+    margin-left: 4px;
 	margin-bottom: 14px;
-	padding: 7px 5px 5px 5px;
+	padding: 8px 5px 5px 5px;
 	border-radius: 0px 5px 5px 0px;
 	border: 1px solid;
 }
 
-form.pgt_cartao input:focus{	
-	background-color: yellow;
-}
 form input.submit{
 	margin-left: 20px;
 	padding-right: 20px;
 	padding-left: 20px;
 	border-radius: 5px 5px;
 }
-form input.submit:focus{
-	background-color: red;
+
+form input.submit:active{
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+}
+
+form input.submit#botao_princ:active{
+    background-color: lawngreen;
+    border: 2px solid lawngreen;
+    color: white;
 }
 /* IMAGENS DO USUARIO */
 
@@ -460,6 +471,19 @@ img.imgpagamento{
 position: relative;
 	top: 20px;	
 	left: 140px;
+}
+
+img.formu{
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+
+select{
+    position: relative;
+    top: -42px;
+    left: 250px;
+    padding: 3px;
 }
 
 /*CSS DO PHP */

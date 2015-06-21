@@ -12,8 +12,8 @@
 				<nav id="menu">
 					<h1>Menu Principal</h1>
 					<ul>
-						<li><a href="..\index.html">INÍCIO</a></li>
-						<li><a href="..\lavejatonaweb\servicos.html">SERVIÇOS</a></li>
+						<li><a href="..\index.php">INÍCIO</a></li>
+						<li><a href="..\lavejatonaweb\servicos.php">SERVIÇOS</a></li>
 						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
 						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 						
 					</ul>        
@@ -23,19 +23,18 @@
 			<hr class="linha">
 			<section id="corpo">
 				<div id="meio">
-								<div id="info_usuario">
+				        <div id="info_usuario">
 								<img class="alterar" src="..\_imagens\change.png"/>
 								<h3>Alterar Dados</h3>
 								<hr class="primeira">
 								<form class="dois">
-								<label>Nome usuario:</label><input type=text name="novo_usuario"/><br>
-								<label>Nova senha:</label><input type="password" name="nova_senha"/><br>
-								<label>Confirme sua nova senha:</label><input type="password" name="nova_senha"/><br>
-								<input class="dois" type="submit" value="Alterar Dados"/>
-								<input class="dois" type="reset" value="Cancelar"/>
+								<label>Nome usuario:</label><input id="change_nome" type=text name="novo_usuario"/><br>
+								<label>Nova senha:</label><input id="change_password" type="password" name="nova_senha"/><br>
+								<label>Confirmar nova senha:</label><input id="test_password" type="password" name="nova_senha"/><br>
+								<input class="sub" type="submit" value="Alterar Dados"/>
+								<input class="sub" type="reset" value="Cancelar"/>
 								</form>
-								
-								</div>
+				          </div>
 								
 					<div id="op_serv">
 						

@@ -17,6 +17,8 @@
 		<meta charset="UTF-8"/>
 		<title>Projeto FPIN</title>
 		<link rel="stylesheet" type="text/css" href="..\_css\login_usuario.css"/>
+        <script type="text/javascript" src="js/js.js">
+        </script>
 	</head>
     <body>
 		<div id="interface">    
@@ -25,8 +27,8 @@
 				<nav id="menu">
 					<h1>Menu Principal</h1>
 					<ul>
-						<li><a href="..\index.html">INÍCIO</a></li>
-						<li><a href="..\lavejatonaweb\servicos.html">SERVIÇOS</a></li>
+						<li><a href="..\index.php">INÍCIO</a></li>
+						<li><a href="..\lavejatonaweb\servicos.php">SERVIÇOS</a></li>
 						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
 						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 						
 					</ul>        
@@ -45,23 +47,31 @@
                                   
                                 $resultado = mysql_query("SELECT * FROM t_servico WHERE id_usuario = '$id'");
                                 $linhas = mysql_num_rows($resultado);
-    
+                                $pagto;
+                                
                                 echo "<table style='Border: 1px solid;'>";
                                 echo "<tr><th>Id usuario</th><th>Id pedido</th><th>Data</th><th>Valor</th><th>Pagamento</th><th>Status</th><tr>";
-	                           for($i = 0 ; $i < $linhas ; $i++)
-	                           {
+	                           
+                    for($i = 0 ; $i < $linhas ; $i++)
+	                       {
                                 $registro = mysql_fetch_row($resultado);   
                                 echo "<tr><td>$registro[0]</td>";
                                 echo "<td> $registro[1] </td>";
                                 echo "<td> $registro[2]</td>";
                                 echo "<td> $registro[3] R$</td>";
-                                echo "<td> $registro[4]</td>";   
-	                           }
-                                   
-                                echo "</table>";
-                                   
+                                echo "<td id='situacao'> $registro[4]</td>";
+                        if($registro[4]=="Pendente"){
+                                echo "<td id='cor'><img id='$i' src='js\\fail.png'></td>"; 
+                        }else{
+                            echo "<td id='cor'><img id='$i' src='js\\ok.png'></td>"; 
+                        }
+                           }
+                                echo "</table>";   
                                 ?>    
-				
+                                    <br><br>
+                                    <h4>Legendas</h4>
+                                    <img style="margin-left: 130px;"src="js/fail.png"/> Serviço em Andamento.
+                                    <img src="js/ok.png"/> Entrega realizada.
 								</div>
 								
 					<div id="op_serv">
