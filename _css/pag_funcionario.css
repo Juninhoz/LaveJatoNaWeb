@@ -1,11 +1,10 @@
 @charset "UTF-8";
-
 body {
 	background-color: #dddddd;
 	color: rgba(0,0,0,1);
 }
 div#interface {
-	width: 900px;
+	width: 1000px;
 	background-color: #ffffff;
 	margin: -20px auto 0px auto;
 	box-shadow: 0px 0px 10px rgba(0,0,0,.5);
@@ -111,15 +110,14 @@ div#meio{
 	width: 900px;
 	margin-top: 10px;
 	margin-bottom: -10px;
-	
 }
 div#op_serv{
-	margin-top: 10px;
+	margin-top: -500px;
 	height: 470px;
 	width: 250px;
 	border-radius: 10px 0 0 10px;
 	background-color: #F3F3EC ;	
-
+    float: left;
 }
 nav#menu_op ul{
 	list-style: none;
@@ -148,11 +146,10 @@ nav#menu_op li:hover{
 
 div#info_usuario{
 	height: 480px;
-	width: 640px;
-	float: right;
+	width: 740px;
+	margin-left: 260px;
 	background-color: #F3F3EC;
-	margin-bottom: 20px;
-	border: 1px solid;
+	margin-bottom: 20px;	
 }
 
 div#noticias_01{
@@ -274,26 +271,22 @@ div#info_usuario form.um{
 	font-family: verdana;
 }
 
-div#info_usuario form.dois{
-
-}
-
 /* TABELA ACOMPANHAMENTO */
 
 div#info_usuario table{
 	border: 1px solid;
 	margin: auto;
 	margin-top: 20px;
+    font-family: verdana;
 }
 div#info_usuario td{
 	border: 1px solid;
-	padding: 12px;
-	font-family: verdana;
+    padding: 7px;
 	font-size: 12px;
 }
 
 div#info_usuario td:nth-child(2){
-	width: 200px;
+	width: 100px;
 }
 
 div#info_usuario td:nth-child(3){
@@ -303,7 +296,8 @@ div#info_usuario td:nth-child(4){
 	width: 80px;
 }
 div#info_usuario th{
-	color: red;
+	border: 1px solid black;
+    color: green;
 }
 
 div#info_usuario hr.primeira{
@@ -359,35 +353,57 @@ img.pedi{
 /*  DIV DA MENSAGEM  */
 
 div#div_msg{
-	height: 50px;
+	height: 60px;
 	width: 260px;
-	border: 1px solid;
+	border: 1px dashed;
 	border-radius: 5px 5px;
-	
+	margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+div#div_pedid{
+	height: 60px;
+	width: 260px;
+	border: 1px dashed;
+	border-radius: 5px 5px;
+	margin-left: 20px;
+    margin-right: 70px;
+    float: right;
+}
+
+a#mensagi{
+    text-decoration: none;   
 }
 
 div#msg{
 		height: 35px;
-		width: 185px;
-		float: right;
-		margin-top: 6px;
-		margin-right: 10px;
+		width: 145px;	
 		border-left: 2px solid black;
+        position: relative;
+        top: -55px;
+        left: 60px;
+    
 }
 
 div#msg p{
 		text-indent: 5px;
 		font-family: verdana;
 		font-size: 13px;
+        position: relative;
+        top: 10px;
 }
 
-div#msg img.msgg{
+img.msgg{
 	position: relative;
+    top: 5px;
+    left: 5px;
 }
 
 div#notificaçao{
-	height: 125px;
-	width: 600px;
+	height: 280px;
+	width: 700px;
+    margin: auto;
+    margin-top: 20px;
 }
 div#notificaçao p{
 	font-family: Verdana;
@@ -404,7 +420,90 @@ div#notificaçao span.recusar{
 	
 	border-radius: 5px 5px;
 }
+a.back{
+    text-decoration: none;
+    font-family: Verdana;
+}
+span.back{
+    position: relative;
+    top: 20px;
+    margin-left: 65px;
+    border: 1px solid;
+    border-radius: 5px 5px;
+    padding: 6px;
+    background-color: #66FF33;
+    color: black;
+}
+
+span.back:hover{
+    padding: 8px; 
+}
+
+select.research{
+    padding: 3px;
+    position: relative;
+    bottom: 2px;
+}
+
+label.research{
+    font-family: Verdana;
+    background-color: #66FF33;
+    padding: 3px;
+    border-radius: 5px 5px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+input.env{
+    position: relative;
+    padding: 5px;
+    top: 10px;
+    left: 20px;
+    border-radius: 5px 5px;
+}
+
+input.env:hover{
+    position: relative;
+    padding: 6px;
+    background-color: #66FF33;
+    top: 10px;
+    left: 20px;
+    border-radius: 5px 5px;
+}
+
+input.research{
+    position: relative;
+    padding: 3px;
+    bottom: 2px;
+}
+input.research:focus{
+    border:1px solid #66FF33;
+}
+
+input.remove{
+    padding: 4px;
+    position: relative;
+    top: 220px;
+    left: 535px;
+    background-color: red;
+    color: white;
+    border-radius: 5px 5px;
+}
+
+input.remove:hover{
+    padding: 6px;
+    position: relative;
+    top: 220px;
+    left: 515px;
+    background-color: red;
+    color: white;
+}
+
+
 /* RELATORIO DE CLIENTES */
+
+table#op td{
+    text-align: center;
+}
 
 
 

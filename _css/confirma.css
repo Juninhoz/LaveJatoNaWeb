@@ -178,13 +178,13 @@ span.falhaa{
     font-size: 30px;
     color: red;
     position: relative;
-    left: 180px;
+    left: 200px;
 }
 
 img#falhar{
     position: relative;
     top: 20px;
-    right: 300px;
+    right: 220px;
 }
 
 img#sucesso{

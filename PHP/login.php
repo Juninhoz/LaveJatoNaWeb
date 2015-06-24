@@ -33,7 +33,7 @@
 									
 									<div id='falha'> 
                                     
-                                    <span class='falhaa'>Formulario em branco</span>
+                                    <span class='falhaa'>Dados Invalidos.</span>
                                                                                         
                                     <img id='falhar' src='..\\_imagens\\falha.png'>
                                     
@@ -76,7 +76,7 @@ content='2;url=..\\index.php'>";
 									
 									<div id='falha'> 
                                     
-                                    <span class='falhaa'>Usuario/Senha invalidos</span>
+                                    <span class='falhaa'>Dados Invalidos.</span>
                                                                                         
                                     <img id='falhar' src='..\\_imagens\\falha.png'>
                                     
@@ -104,7 +104,12 @@ content='2;url=..\\index.php'>";
             $_SESSION['nome_usuario']=$nome_usuario;
             $_SESSION['senha_usuario']=$senha_usuario;
             $_SESSION['id']=$identificador;
+            
+            if($nome_usuario == 'admin' || $senha_usuario == 'admin'){
+            header("Location: ..\\pagina_funcionario\\pagina_funcionario.php");
+            }else{
             header("Location: ..\\pagina_usuario\\pagina_usuario.php");
-        }
+                }
+            }
     }
 ?>

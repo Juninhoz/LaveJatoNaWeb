@@ -337,7 +337,6 @@ div#op_cartao{
 	height: 100px;
 	width: 250px;
     margin-right: 40px;
-   
 }
 div#op_cartao img{
 	position: relative;
@@ -350,7 +349,6 @@ div#text.um{
     position: relative;
     bottom: 55px;
     text-decoration: none;
-    
 }
 div#text{
 	border-left: 1px solid;

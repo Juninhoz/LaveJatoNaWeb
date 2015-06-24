@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Jun-2015 às 19:52
+-- Generation Time: 24-Jun-2015 às 17:07
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -23,6 +23,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `t_mensagens`
+--
+
+CREATE TABLE IF NOT EXISTS `t_mensagens` (
+  `nome` varchar(30) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `telefone` varchar(10) NOT NULL,
+  `assunto` varchar(40) NOT NULL,
+  `duvida` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `t_pagamento`
+--
+
+CREATE TABLE IF NOT EXISTS `t_pagamento` (
+  `titular_cartao` varchar(40) NOT NULL,
+  `numero_cartao` varchar(16) NOT NULL,
+  `data_valid` varchar(10) NOT NULL,
+  `cod_seg` varchar(3) NOT NULL,
+  `id_pedido` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `t_pagamento`
+--
+
+INSERT INTO `t_pagamento` (`titular_cartao`, `numero_cartao`, `data_valid`, `cod_seg`, `id_pedido`) VALUES
+('jose da silva', '0000000000000000', '11111', '123', 1),
+('juninhoz duda', '1111111111111111', '1111', '123', 4),
+('bianca duda', '1111111111111111', '112233', '321', 5);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `t_servico`
 --
 
@@ -32,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `t_servico` (
   `data` date NOT NULL,
   `valor` int(11) NOT NULL,
   `status` varchar(30) NOT NULL DEFAULT 'Pendente'
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -47,18 +84,33 @@ CREATE TABLE IF NOT EXISTS `t_usuarios` (
   `nome` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
   `sexo` char(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `t_usuarios`
 --
 
 INSERT INTO `t_usuarios` (`cod_usuario`, `nome_usuario`, `senha`, `nome`, `email`, `sexo`) VALUES
-(13, 'junior', '12345', '', 'juniorrock', 'M');
+(1, 'Junior', '12345', '', 'juniorrock007@gmail.com', 'M'),
+(6, 'Neto duda', 'testando', '', 'testando@gmail.com', 'M'),
+(7, 'Bianca duda', 'testando', '', 'teste@gmail.com', 'M'),
+(8, 'Admin', 'admin', '', 'admin@gmail.com', 'M');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `t_mensagens`
+--
+ALTER TABLE `t_mensagens`
+ ADD PRIMARY KEY (`nome`);
+
+--
+-- Indexes for table `t_pagamento`
+--
+ALTER TABLE `t_pagamento`
+ ADD PRIMARY KEY (`id_pedido`);
 
 --
 -- Indexes for table `t_servico`
@@ -80,12 +132,12 @@ ALTER TABLE `t_usuarios`
 -- AUTO_INCREMENT for table `t_servico`
 --
 ALTER TABLE `t_servico`
-MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=86;
+MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `t_usuarios`
 --
 ALTER TABLE `t_usuarios`
-MODIFY `cod_usuario` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `cod_usuario` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
