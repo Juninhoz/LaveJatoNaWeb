@@ -4,10 +4,9 @@
     require_once "funcoes_func.php";
     require_once "sessao_func.php";
     
-     $mensagens = queryMensagem();
-     $pedidos =  queryServico();
-?>
+    
 
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,33 +34,26 @@
 				<div id="meio">
 				
 								<div id="info_usuario">
-									<img class="func" src="..\_imagens\func.png"/>
-									<h3>Pagina do Funcionario!</h3>
+									<img class="pedi" src="..\_imagens\ped_acomp.png"/>
+									<h3>Acompanhamento de Pedidos</h3>
 									<hr class="primeira">
-									<a href="pedidos.php" id="mensagi">
-									<div id="div_pedid">
-										<img class="msgg" src="..\_imagens\pedidos.png"/> 
-										<div id="msg">
-											<p>  <?php echo $pedidos;?> Pedidos </p>
-										</div>
-																	
-                                        </div></a>
-									<a href="mensagens.php" id="mensagi"><div id="div_msg">
-										<img class="msgg" src="..\_imagens\msgg.png"/> 
-										<div id="msg">
-											<p> <?php echo $mensagens;?> mensagens</p>
-										</div>
-                                        </div></a>
+									
+                                    <?php 
+                                            
+                                     consultaPedidos();
+                                     
                                     
-                                    
+                                     
+                                     ?>
+									
 								</div>
 					<div id="op_serv">
 					
 					<nav id="menu_op" >
 					<ul>
-						<a href="pagina_funcionario.php"><li style="background-color: #66FF33">Pagina inicial - Funcionario</li></a>
-						<a href="relatorio_clientes.php"><li>Relatorio de clientes</li></a>
-						<a href="gerenciar_pedidos.php"><li>Gerenciar Pedidos</li></a>
+						<a href="pagina_funcionario.php"><li >Pagina inicial - Funcionario</li></a>
+						<a href="relatorio_clientes.php"><li >Relatorio de clientes</li></a>
+						<a href="gerenciar_pedidos.php"><li style="background-color: #66FF33">Gerenciar Pedidos</li></a>
 					</ul>
 					</nav>
 					

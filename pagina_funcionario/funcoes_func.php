@@ -5,7 +5,8 @@
     function consultaMensagem($var){    
     
         if(!isset($var)){
-            echo "Selecione uma mensagem.";
+            echo "<h3>Selecione uma mensagem.</h3>";
+            echo "<a href='mensagens.php'>Voltar</a>";
         }
         else{   
     $sql = mysql_query("SELECT * FROM t_mensagens");    
@@ -17,18 +18,22 @@
              continue;   
             }
             
+            echo "<fieldset>";
+            echo "<legend>Mensagens</legend>";
             echo "<table>";
-            echo "<tr><th>Nome:</th><tr>";
-            echo "<tr><td style='border:1px solid'>" . $row['nome'] . "</tr></td>";
-            echo "<tr><th>Email:</th><tr>";
-            echo "<tr><td style='border:1px solid'>" . $row['email'] . "</tr></td>";
-            echo "<tr><th>Telefone:</th><tr>";
-            echo "<tr><td style='border:1px solid'>" . $row['telefone'] . "</tr></td>";
-            echo "<tr><th>Assunto:</th><tr>";
-            echo "<tr><td style='border:1px solid'>" . $row['assunto'] . "</tr></td>";
-            echo "<tr><th>Duvida:</th><tr>";
-            echo "<tr><td style='border:1px solid'>" . $row['duvida'] . "</tr></td>";
+            echo "<tr><th>Nome:</th>";
+            echo "<td>" . $row['nome'] . "</td></tr>";
+            echo "<tr><th>Email:</th>";
+            echo "<td>" . $row['email'] . "</td></tr>";
+            echo "<tr><th>Telefone:</th>";
+            echo "<td>" . $row['telefone'] . "</td></tr>";
+            echo "<tr><th>Assunto:</th>";
+            echo "<td>" . $row['assunto'] . "</td></tr>";
+            echo "<tr><th>Duvida:</th>";
             echo "</table>";
+            echo "<textarea class='text'>" . $row['duvida'] . "</textarea></tr><br><br>";
+            echo "<a href='mensagens.php'>Voltar</a>";
+            echo "</fieldset>";
         }
     
     }
@@ -66,11 +71,49 @@
     }
     
     function queryServico(){
-        $consulta = mysql_query("SELECT * FROM t_servico");
+        $consulta = mysql_query("SELECT * FROM t_servico WHERE status_pedido = 'Em analise'");
         $teste = mysql_num_rows($consulta);
         return $teste;
     }
 
+
+function exibirPedidos(){
+        $consulta = mysql_query("SELECT id_usuario,nome_usuario,id_pedido,data,valor,status_pagamento FROM t_servico,t_usuarios where id_usuario = cod_usuario and status_pedido = 'Em analise'");
+   
+    $pedidos = mysql_num_rows($consulta);
+    
+        echo "<form action='pedidos.php' method='get'>";                             
+        echo "<table name='table_msg' class='exibirPed'>";    
+        echo "<tr><th>Id usuario</th><th>Nome Usuario</th><th>Id Pedido</th><th>Data</th><th>Valor</th><th>Status</th><th>Aceitar</th><th>Rejeitar</th></tr>";
+        $reg = array();
+            for($i=0;$i<$pedidos;$i++){
+                $registro = mysql_fetch_row($consulta);
+                    echo "<tr><td>" . $registro[0]. "</td>";
+                    echo "<td>" . $registro[1]. "</td>";
+                    echo "<td>" . $registro[2]. "</td>";
+                    $reg[$i] = $registro[2];
+                    echo "<td>" . $registro[3]. "</td>";
+                    echo "<td>" . $registro[4]. "</td>";
+                    echo "<td>" . $registro[5]. "</td>";
+                    echo "<td><input type='checkbox' name='aceitar' value='$reg[$i]'></td>";
+                    echo "<td><input type='checkbox' name='rejeitar' value='$reg[$i]'></td></tr>";
+            }
+        echo "</table>";
+        echo "<input class='exibir_enviar'type='submit' value='Atualizar dados'>";
+        echo "</form>";
+}
+
+function aceitarPedido($id){
+    
+    $sql = mysql_query("UPDATE t_servico SET status_pedido = 'Aceito' WHERE id_pedido = '$id'");
+    
+    if($sql){
+        echo "deu tudo certo";   
+    }else{
+    echo "deu tudo ERRADO";
+    }
+    
+}
 
 function mostrarUsuarios(){
     
@@ -89,9 +132,10 @@ function mostrarUsuarios(){
          echo "<td> $registro[4]</td>";
          echo "<td><input class='op' type='checkbox' name='valor' value='$reg[$i]'></td></tr>";      
     }
-    echo "<input class='remove' type='submit' value='Remover'>";
+    echo "</table>";
+    echo "<br><input class='remove' type='submit' value='Remover'>";
     echo "</form>";
-    echo "</table>";   
+       
 }
 
 function mostrarUsuariosSelecionado($var){
@@ -146,5 +190,47 @@ function removerUsuario($id){
      echo "falha ao remover";   
     }
 }
+ 
+function consultaPedidos(){
+    $sql = mysql_query("SELECT * FROM t_servico");
+    $linhas = mysql_num_rows($sql);
     
+    if(!$linhas){
+        echo "<h3 style='Margin-top:20px;'>Nenhum resultado para busca.</h3>";
+    }else{
+    echo "<table>";
+    echo "<tr><th>Id usuario</th><th>Nome</th><th>Email</th></tr>";
+    for($i=0;$i<$linhas;$i++){
+         $registro = mysql_fetch_row($sql);   
+         echo "<tr><td>$registro[0]</td>";
+         echo "<td> $registro[1] </td>";
+         echo "<td> $registro[2]</td>";
+         echo "<td> $registro[3] </td></tr>";
+    }
+    echo "</table>"; 
+    }
+}
+
+function exibirMensagens(){
+                                    
+    $sql = mysql_query("SELECT * FROM t_mensagens");
+    $linhas = mysql_num_rows($sql);
+    echo "<form action='msg.php' method='post'>";                             
+    echo "<table name='table_msg' class='tabela_msg'>";    
+    echo "<tr><th>Nome</th><th>Email</th><th>Telefone</th><th>Assunto</th><th>Ler Mensagens</th><th>Apagar</th></tr>";
+          for($i=0;$i<$linhas;$i++){
+                $registro = mysql_fetch_row($sql);
+                        echo "<tr><td>" . $registro[0]. "</td>";
+                        echo "<td>" . $registro[1]. "</td>";
+                        echo "<td>" . $registro[2]. "</td>";
+                        echo "<td>" . $registro[3]. "</td>";
+                        echo "<td><input type='checkbox' name='mens' value='$i'/><input type='submit' value='Ler Mensagem'></td>"; 
+                        echo "<td><input type='checkbox' name='del' value='$i'/><input type='submit' value='Apagar'/></td><tr>";
+        }
+    echo "</table>";  
+    echo "</form>";
+}
+
+
+
 ?>

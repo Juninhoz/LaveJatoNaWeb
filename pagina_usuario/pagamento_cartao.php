@@ -8,8 +8,6 @@ include "..\\PHP\\conexao_banco.php";
     }else{
         $id = $_SESSION['id'];
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +60,7 @@ include "..\\PHP\\conexao_banco.php";
 								<h5>Selecione o serviço a ser pago: </h5>
                                 <select name="servicos">
                                 <?php                                        
-                                        $sql = mysql_query("SELECT id_pedido,valor FROM t_servico WHERE id_usuario = '$id' and status = 'Pendente'");  
+                                        $sql = mysql_query("SELECT id_pedido,valor FROM t_servico WHERE id_usuario = '$id' and status_pagamento = 'Pendente'");  
                                         
                                         $linhas = mysql_num_rows($sql);
                                         

@@ -10,7 +10,6 @@
     $ativando = false;
 if($nome != ''){
     @$ativa = true;
-    echo "teste";
 }
 
 if($select != ''){
@@ -83,7 +82,7 @@ else{
 					<ul>
 						<a href="pagina_funcionario.php"><li >Pagina inicial - Funcionario</li></a>
 						<a href="relatorio_clientes.php"><li style="background-color: #66FF33">Relatorio de clientes</li></a>
-						<a href="gerenciar_pedidos.html"><li>Gerenciar Pedidos</li></a>
+						<a href="gerenciar_pedidos.php"><li>Gerenciar Pedidos</li></a>
 					</ul>
 					</nav>
 					

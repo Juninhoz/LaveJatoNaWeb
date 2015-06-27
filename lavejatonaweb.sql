@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24-Jun-2015 às 17:07
+-- Generation Time: 27-Jun-2015 às 19:16
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS `t_mensagens` (
   `duvida` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `t_mensagens`
+--
+
+INSERT INTO `t_mensagens` (`nome`, `email`, `telefone`, `assunto`, `duvida`) VALUES
+('junior', 'ae', 'ae', 'ae', 'testando');
+
 -- --------------------------------------------------------
 
 --
@@ -53,9 +60,7 @@ CREATE TABLE IF NOT EXISTS `t_pagamento` (
 --
 
 INSERT INTO `t_pagamento` (`titular_cartao`, `numero_cartao`, `data_valid`, `cod_seg`, `id_pedido`) VALUES
-('jose da silva', '0000000000000000', '11111', '123', 1),
-('juninhoz duda', '1111111111111111', '1111', '123', 4),
-('bianca duda', '1111111111111111', '112233', '321', 5);
+('junior duda', '9999999999999999', '10/2015', '999', 4);
 
 -- --------------------------------------------------------
 
@@ -68,8 +73,17 @@ CREATE TABLE IF NOT EXISTS `t_servico` (
 `id_pedido` int(11) NOT NULL,
   `data` date NOT NULL,
   `valor` int(11) NOT NULL,
-  `status` varchar(30) NOT NULL DEFAULT 'Pendente'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `status_pagamento` varchar(30) NOT NULL DEFAULT 'Pendente',
+  `status_pedido` varchar(20) NOT NULL DEFAULT 'Em analise'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `t_servico`
+--
+
+INSERT INTO `t_servico` (`id_usuario`, `id_pedido`, `data`, `valor`, `status_pagamento`, `status_pedido`) VALUES
+(1, 4, '2015-06-27', 10, 'Pago', 'Aceito'),
+(1, 5, '2015-06-27', 20, 'Pendente', 'Em analise');
 
 -- --------------------------------------------------------
 
@@ -78,13 +92,13 @@ CREATE TABLE IF NOT EXISTS `t_servico` (
 --
 
 CREATE TABLE IF NOT EXISTS `t_usuarios` (
-`cod_usuario` int(10) NOT NULL,
+`cod_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(30) NOT NULL,
   `senha` varchar(80) NOT NULL,
   `nome` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
   `sexo` char(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `t_usuarios`
@@ -93,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `t_usuarios` (
 INSERT INTO `t_usuarios` (`cod_usuario`, `nome_usuario`, `senha`, `nome`, `email`, `sexo`) VALUES
 (1, 'Junior', '12345', '', 'juniorrock007@gmail.com', 'M'),
 (6, 'Neto duda', 'testando', '', 'testando@gmail.com', 'M'),
-(7, 'Bianca duda', 'testando', '', 'teste@gmail.com', 'M'),
-(8, 'Admin', 'admin', '', 'admin@gmail.com', 'M');
+(8, 'Admin', 'admin', '', 'admin@gmail.com', 'M'),
+(9, 'Juninhoz duda', '123456', '', 'juniorrock007@gmail.com', 'M');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +124,7 @@ ALTER TABLE `t_mensagens`
 -- Indexes for table `t_pagamento`
 --
 ALTER TABLE `t_pagamento`
- ADD PRIMARY KEY (`id_pedido`);
+ ADD PRIMARY KEY (`numero_cartao`), ADD KEY `FK_ID_PRODUTO` (`id_pedido`);
 
 --
 -- Indexes for table `t_servico`
@@ -132,12 +146,22 @@ ALTER TABLE `t_usuarios`
 -- AUTO_INCREMENT for table `t_servico`
 --
 ALTER TABLE `t_servico`
-MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `t_usuarios`
 --
 ALTER TABLE `t_usuarios`
-MODIFY `cod_usuario` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `t_pagamento`
+--
+ALTER TABLE `t_pagamento`
+ADD CONSTRAINT `FK_ID_PRODUTO` FOREIGN KEY (`id_pedido`) REFERENCES `t_servico` (`id_pedido`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

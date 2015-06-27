@@ -60,7 +60,7 @@
                                 echo "<td> $registro[2]</td>";
                                 echo "<td> $registro[3] R$</td>";
                                 echo "<td id='situacao'> $registro[4]</td>";
-                        if($registro[4]=="Pendente"){
+                        if($registro[5]=="Em analise"){
                                 echo "<td id='cor'><img id='$i' src='js\\fail.png'></td>"; 
                         }else{
                             echo "<td id='cor'><img id='$i' src='js\\ok.png'></td>"; 
@@ -70,8 +70,8 @@
                                 ?>    
                                     <br><br>
                                     <h4>Legendas</h4>
-                                    <img style="margin-left: 130px;"src="js/fail.png"/> Serviço em Andamento.
-                                    <img src="js/ok.png"/> Entrega realizada.
+                                    <img style="margin-left: 130px;"src="js/fail.png"/> Pedido em analise.
+                                    <img src="js/ok.png"/> Pedido aceito.
 								</div>
 								
 					<div id="op_serv">

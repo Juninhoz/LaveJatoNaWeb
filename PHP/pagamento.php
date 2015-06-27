@@ -34,7 +34,7 @@
                                     
                                     <img id="sucesso" src="..\_imagens\sucesso.png"> <?php
                                                                                          if($sql){
-                                                                                         $sql2 = mysql_query("UPDATE t_servico SET status = 'Pago' WHERE id_pedido = '$op_select'");
+                                                                                         $sql2 = mysql_query("UPDATE t_servico SET status_pagamento = 'Pago' WHERE id_pedido = '$op_select'");
                                                                                          if($sql2){
                                                                                                  echo "<span class='sucess'>Pagamento Realizado</span>";
                                                                                               echo "<meta http-equiv=refresh
