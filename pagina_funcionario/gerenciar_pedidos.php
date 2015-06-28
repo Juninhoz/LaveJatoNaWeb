@@ -4,7 +4,7 @@
     require_once "funcoes_func.php";
     require_once "sessao_func.php";
     
-    
+    @$select = $_GET['select'];
 
 ?>
 <!DOCTYPE html>
@@ -13,6 +13,8 @@
 		<meta charset="UTF-8"/>
 		<title>Projeto FPIN</title>
 		<link rel="stylesheet" type="text/css" href="..\_css\pag_funcionario.css"/>
+        <script type="text/javascript" src="js_funcionario.js">
+        </script>
 	</head>
     <body>
 		<div id="interface">    
@@ -35,15 +37,26 @@
 				
 								<div id="info_usuario">
 									<img class="pedi" src="..\_imagens\ped_acomp.png"/>
-									<h3>Acompanhamento de Pedidos</h3>
+									<h3>Gerenciar pedidos</h3>
 									<hr class="primeira">
-									
-                                    <?php 
-                                            
-                                     consultaPedidos();
-                                     
+								            
                                     
-                                     
+                                    <?php 
+                                        
+                                    if(isset($select)){
+                                        pesquisaGerencia($select);
+                                    
+                                        if($select == ''){
+                                            echo "<h3>Nenhum resultado para a busca.</h3>";
+                                            echo "<a class='return' href='gerenciar_pedidos.php'>Voltar</a>";
+                                        }
+                                        
+                                        
+                                    }else{
+                                    
+                                     pesquisaPedidos();
+                                     consultaPedidos();
+                                    }
                                      ?>
 									
 								</div>

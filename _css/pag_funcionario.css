@@ -278,6 +278,7 @@ div#info_usuario table{
 	margin: auto;
 	margin-top: 20px;
     font-family: verdana;
+    text-align: Center;
 }
 div#info_usuario td{
 	border: 1px solid;
@@ -475,6 +476,19 @@ input.research{
     padding: 3px;
     bottom: 2px;
 }
+
+input.research_submit{
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px 5px;
+}
+
+input.research_submit:hover{
+    padding: 6px;
+    background-color:#66FF33; 
+    border-radius: 5px 5px;
+}
+
 input.research:focus{
     border:1px solid #66FF33;
 }
@@ -531,4 +545,40 @@ input.exibir_enviar:hover{
     color: white;
     border-radius: 5px 5px;
     cursor:pointer;
+}
+
+table.ger{
+    text-align: Center;
+}
+
+th{
+    padding: 4px;
+}
+th.ger{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+span.noum{
+    font-family: Verdana;
+    margin-left: 15px;
+}
+a.return{
+    position: relative;
+    text-decoration: none;
+    font-family: Verdana;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px 5px;
+    margin-left: 25px;
+    background-color: #66FF33;
+}
+
+a.return:hover{
+    text-decoration: none;
+    font-family: Verdana;
+    border: 1px solid;
+    padding: 8px;
+    border-radius: 5px 5px;
+    margin-left: 25px;
 }

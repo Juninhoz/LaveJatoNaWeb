@@ -79,7 +79,7 @@
 					<nav id="menu_op" >
 					<ul>
 						<a href="pagina_usuario.php"><li>Pagina inicial</li></a>
-						<a href="solicitar_serviço.html"><li>Solicitar Serviços</li></a>
+						<a href="solicitar_servico.html"><li>Solicitar Serviços</li></a>
 						<li style="background-color: #6699FF">Acompanhamento de Pedidos</li>
 						<a href="op_pagamento.html"><li>Opçoes de Pagamento</li></a>
 						<a href="alterar_dados.html"><li>Alterar Dados</li></a>

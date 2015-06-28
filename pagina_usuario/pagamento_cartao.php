@@ -91,7 +91,7 @@ include "..\\PHP\\conexao_banco.php";
 					<nav id="menu_op" >
 					<ul>
 						<a href="pagina_usuario.php"><li>Pagina inicial</li></a>
-						<a href="solicitar_serviço.html"><li>Solicitar Serviços</li></a>
+						<a href="solicitar_servico.html"><li>Solicitar Serviços</li></a>
 						<a href="Acomp_pedidos.php"><li>Acompanhamento de Pedidos</li></a>
 						<li style="background-color: #6699FF">Opçoes de Pagamento</li>
 						<a href="alterar_dados.html"><li>Alterar Dados</li></a>

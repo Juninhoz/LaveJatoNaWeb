@@ -8,9 +8,10 @@
     $pedidos =  queryServico();
 
     @$aceitar = $_GET['aceitar'];
+    @$rejeitar = $_GET['rejeitar'];
 
-    if(!isset($aceitar)){    
-        @$rejeitar = $_GET['rejeitar'];
+    if(!isset($aceitar) || isset($rejeitar)){    
+        rejeitarPedido($rejeitar);
     }
 
     if(isset($aceitar)){

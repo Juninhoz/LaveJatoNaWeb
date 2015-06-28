@@ -23,6 +23,9 @@ if($select != ''){
 		<meta charset="UTF-8"/>
 		<title>Projeto FPIN</title>
 		<link rel="stylesheet" type="text/css" href="..\_css\pag_funcionario.css"/>
+        <script type="text/javascript">
+        
+        </script>
 	</head>
     <body>
 		<div id="interface">    
