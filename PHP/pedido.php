@@ -74,7 +74,7 @@
                                                                                         if($pedido){
 
                                                                                             echo "<span class='sucess'>Pedido Realizado com sucesso</span>";
-                                                                                            echo "<meta http-equiv=refresh content='5;url=..\\pagina_usuario\\pagina_usuario.php'>";
+                                                                                            echo "<meta http-equiv=refresh content='3;url=..\\pagina_usuario\\pagina_usuario.php'>";
                                                                                             }else{
                                                                                             echo "Erro ao realizar o pedido";
                                                                                             }

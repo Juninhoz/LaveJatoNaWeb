@@ -80,7 +80,7 @@
                     echo "<br><a class='ir' href='..\\pagina_funcionario\\pagina_funcionario.php'><label class='ir_pag'>Pagina inicial</label></a><br>";
                 }else{
                 
-                echo "<br><a class='ir' href='pagina_usuario\\pagina_usuario.php'><label class='ir_pag'>Pagina inicial</label></a><br>";
+                echo "<br><a class='ir' href='..\\pagina_usuario\\pagina_usuario.php'><label class='ir_pag'>Pagina inicial</label></a><br>";
                 }
                     echo "<a href='..\\PHP\\logout.php'><label class='desconect'>Desconectar</label></a>";
                         

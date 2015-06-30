@@ -1,13 +1,10 @@
 <?php 
-include "..\\PHP\\conexao_banco.php";
-    
-    session_start();
-    if(!isset($_SESSION['nome_usuario']) || !isset($_SESSION['senha_usuario'])){
-        header("Location: ..\\index.html");
-        exit;
-    }else{
-        $id = $_SESSION['id'];
-    }
+    include "..\\PHP\\conexao_banco.php";
+    require_once "sessao_usuario.php";
+    require_once "funcoes_usuario.php";
+
+    $id = $_SESSION['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -21,19 +18,9 @@ include "..\\PHP\\conexao_banco.php";
 	</head>
     <body>
 		<div id="interface">    
-			<header id="cabecalho">
-				
-				<nav id="menu">
-					<h1>Menu Principal</h1>
-					<ul>
-						<li><a href="..\index.php">INÍCIO</a></li>
-						<li><a href="..lavejatonaweb\servicos.php">SERVIÇOS</a></li>
-						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
-						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 						
-					</ul>        
-				</nav>
-				<img class="icone" src="..\_imagens\laundry.png"/>
-			</header>
+			<?php
+                include "header.php";
+            ?>  
 			<hr class="linha">
 			<section id="corpo">
 				<div id="meio">
@@ -49,7 +36,7 @@ include "..\\PHP\\conexao_banco.php";
 								<div id="text" class="um"><p>Cartão de Credito</p></div>
 								</div>
 								
-								<a class="teste" href="pagamento_boleto.html"><div id="op_boleto">
+								<a class="teste" href="pagamento_boleto.php"><div id="op_boleto">
 								<img src="..\_imagens\pag_boleto.png"/>
 								<div id="text" class="um"><p>Boleto </p></div>
 								</div></a>
@@ -58,20 +45,12 @@ include "..\\PHP\\conexao_banco.php";
 								<form action="..\PHP\pagamento.php" method="post" id="pgt_cartao" class="pgt_cartao" name="pgto_cartao">
 								<br>
 								<h5>Selecione o serviço a ser pago: </h5>
-                                <select name="servicos">
+                                
                                 <?php                                        
-                                        $sql = mysql_query("SELECT id_pedido,valor FROM t_servico WHERE id_usuario = '$id' and status_pagamento = 'Pendente'");  
-                                        
-                                        $linhas = mysql_num_rows($sql);
-                                        
-                                        
-                                    for($i = 0 ; $i < $linhas ; $i++){  
-                                        $registro = mysql_fetch_row($sql);
-                                        echo "<option value='$registro[0]'> id Pedido : " . $registro[0] . " " ." Valor : " . $registro[1] .  "</option><br>";
-                                    }
-	                                       
-                                       echo "</select>";         
-                                        ?>
+                                        mostrarUsuariosDebitos($id);       
+                                
+                                ?>
+                                
                                 <legend>Dados do cartão</legend><br>
                                     <label>Numero do Cartão:</label><input id="number_card" name="numero_cartao" type="text" size="25" maxlength="16" onchange="validaNumero('number_card');ativarBotao();"/><img id="valida_card" class="formu" src=""><br>
 								<label>Titular do Cartão:</label><input id="dono_card" type="text" size="27" name="titular" onchange="validaNome('dono_card');ativarBotao();"/><img id="valida_noum" class="formu" src=""><br>
@@ -94,7 +73,7 @@ include "..\\PHP\\conexao_banco.php";
 						<a href="solicitar_servico.html"><li>Solicitar Serviços</li></a>
 						<a href="Acomp_pedidos.php"><li>Acompanhamento de Pedidos</li></a>
 						<li style="background-color: #6699FF">Opçoes de Pagamento</li>
-						<a href="alterar_dados.html"><li>Alterar Dados</li></a>
+						<a href="alterar_dados.php"><li>Alterar Dados</li></a>
 						
 					</ul>
 					</nav>

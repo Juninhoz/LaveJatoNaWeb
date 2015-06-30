@@ -59,13 +59,16 @@ nav#menu ul {
 
 nav#menu li {
 	display: inline-block;
-	background-color: #dddddd;
+	border: 3px solid #6699FF;
+    border-radius: 5px 5px;
 	padding: 10px;
 	margin: 2px;
 	transition: background-color 1s;
 }
+
 nav#menu li:hover {
-	background-color: #606060;
+	background-color: #6699FF;
+    padding: 14px;
 }
 nav#menu h1 {
 	display: none;

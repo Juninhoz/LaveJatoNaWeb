@@ -55,12 +55,12 @@
         
         $teste = $row['nome'];
         
-        echo $teste;
-        
         $delete = mysql_query("DELETE FROM t_mensagens WHERE nome = '$teste'");
         
         if($delete){
-            echo "Tudo certo";
+            echo "<h3>Mensagem Removida</h3>";
+            echo "<a href='mensagens.php'>Voltar</a>";
+            echo "<meta http-equiv=refresh content='3;url=..\\pagina_funcionario\\mensagens.php'>";
         }
     }
 
@@ -104,15 +104,7 @@ function exibirPedidos(){
 }
 
 function aceitarPedido($id){
-    
     $sql = mysql_query("UPDATE t_servico SET status_pedido = 'Aceito' WHERE id_pedido = '$id'");
-    
-    if($sql){
-        echo "deu tudo certo";   
-    }else{
-    echo "deu tudo ERRADO";
-    }
-    
 }
 
 function rejeitarPedido($id){

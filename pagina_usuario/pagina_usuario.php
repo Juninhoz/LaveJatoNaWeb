@@ -3,13 +3,7 @@
 <?php
 
     include "..\\PHP\\conexao_banco.php";
-    
-    session_start();
-    if(!isset($_SESSION['nome_usuario']) || !isset($_SESSION['senha_usuario'])){
-        header("Location: ..\\index.php");
-        exit;
-    }
-
+    require_once "sessao_usuario.php";
 
     $data = date("d");
 ?>
@@ -22,19 +16,9 @@
 	</head>
     <body>
 		<div id="interface">    
-			<header id="cabecalho">
-				
-				<nav id="menu">
-					<h1>Menu Principal</h1>
-					<ul>
-						<li><a href="..\index.php">INÍCIO</a></li>
-						<li><a href="..\lavejatonaweb\servicos.php">SERVIÇOS</a></li>
-						<li><a href="..\lavejatonaweb\equipe.html">EQUIPE</a></li>
-						<li><a href="..\lavejatonaweb\duvidas.html">DUVIDAS?</a></li> 						
-					</ul>        
-				</nav>
-				<img class="icone" src="..\_imagens\laundry.png"/>
-			</header>
+			<?php
+                include "header.php";
+            ?>
 			<hr class="linha">
 			<section id="corpo">
 				<div id="meio">
@@ -91,7 +75,7 @@
 						<a href="solicitar_servico.html"><li>Solicitar Serviços</li></a>
 						<a href="Acomp_pedidos.php"><li>Acompanhamento de Pedidos</li></a>
 						<a href="op_pagamento.html"><li>Opçoes de Pagamento</li></a>
-						<a href="alterar_dados.html"><li>Alterar Dados</li></a>
+						<a href="alterar_dados.php"><li>Alterar Dados</li></a>
 						
 					</ul>
 					</nav>

@@ -36,7 +36,9 @@
 				
 								<div id="info_usuario">
 									<img class="func" src="..\_imagens\func.png"/>
-									<h3>Pagina do Funcionario!</h3>
+									<a class='sessao' href='..\PHP\logout.php'>Finalizar Sessão</a>
+                                    <h3>Pagina do Funcionario!</h3>
+                                    
 									<hr class="primeira">
 									<a href="pedidos.php" id="mensagi">
 									<div id="div_pedid">
