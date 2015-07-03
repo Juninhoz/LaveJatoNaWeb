@@ -1,30 +1,39 @@
-var nome = false;
-var senha = false;
-var camposenha = false;
-var email = false;
-var campoemail = false;
+var global_nome = false;
+var global_senha = false;
+var global_camposenha = false;
+var global_email = false;
+var global_campoemail = false;
+
+function trim(string){
+    return string.replace(/^\s+|\s+$/g,"");
+}
 
 function ValidaCampoNome(id) {
-            if(document.getElementById(id).value.length<4 || document.getElementById(id).value.length>20) {
+    var nome = trim(document.getElementById(id).value);
+    document.getElementById(id).value = nome;
+    if(document.getElementById(id).value.length <4 || document.getElementById(id).value.length > 20) {
                     
                 document.getElementById("img00").src = "js\\nomeinvalido.png";
-                    nome = false;
+                global_nome = false;
             }
             else {
-                    document.getElementById("img00").src = "js\\nomevalido.png";
-                    nome = true;
+                document.getElementById("img00").src = "js\\nomevalido.png";
+                global_nome = true;
             }
 }
 
 function ValidaCampoSenha(id){
+            var senha = trim(document.getElementById(id).value);
+            document.getElementById(id).value = senha;
+        
             if(document.getElementById(id).value.length<5) {
                     
                 document.getElementById("img01").src = "js\\senhainvalida.png";  
-                senha = false;
+                global_senha = false;
             }
             else {
                     document.getElementById("img01").src = "js\\senhavalida.png";
-                    senha = true;
+                global_senha = true;
             }
 }
 
@@ -32,20 +41,22 @@ function ValidaCampoSenha(id){
 function VerificaCampoSenha(id){
             if(document.getElementById(id).value == document.getElementById("password").value){
                 document.getElementById("img02").src = "js\\correto.png";
-                camposenha = true;
+                global_camposenha = true;
             }
             else{
                 document.getElementById("img02").src = "js\\senhaincorreta.png";
-                camposenha = false;
+                global_camposenha = false;
             }
 }
 
 function ValidaCampoEmail(id){
-                    
+            var email = trim(document.getElementById(id).value); 
+            document.getElementById(id).value = email;
             var string = document.getElementById(id).value;
             var Myarray = new Array();
             var arroba = 0;
             var ponto;
+            var pontocom = false;
             tam = document.getElementById(id).value.length;
     
             for(var i = 0;i<document.getElementById(id).value.length;i++){
@@ -62,30 +73,43 @@ function ValidaCampoEmail(id){
                 if(Myarray[j]=='.'){
                     if(Myarray[j+1]=='.'){
                         ponto = false;
+                    }    
+                }
+                if(Myarray[tam-4]=='.'){
+                   if(Myarray[tam-3]=='c'){
+                       if(Myarray[tam-2]=='o'){
+                            if(Myarray[tam-1]=='m'){
+                                     pontocom = true;
+                   }
+                    else{
+                       pontocom = false;
                     }
                 }
+            }
         }
-                
-            if(document.getElementById(id).value.length>30 || arroba == 0 ||ponto == false ) {
+}
+            if(document.getElementById(id).value.length>30 || arroba == 0 ||ponto == false || pontocom == false) {
                     
                 document.getElementById("img03").src = "js\\emailinvalido.png";
-                email = false
+                global_email = false
             }
             else {
                     document.getElementById("img03").src = "js\\emailvalido.png";
-                    email = true;
+                    global_email = true;
             }
 } 
 
 function VerificaCampoEmail(id){
+            var email = trim(document.getElementById(id).value); 
+            document.getElementById(id).value = email;
             if(document.getElementById(id).value == document.getElementById("email").value) {
                     
                 document.getElementById("img04").src = "js\\correto.png";
-                campoemail = true;
+                global_campoemail = true;
             }
             else {
                     document.getElementById("img04").src = "js\\emailincorreto.png";  
-                campoemail = false;
+                global_campoemail = false;
             }
 } 
 
@@ -99,9 +123,11 @@ function limparReg(){
 
 function ativarEnvio(){
     
-    if(nome==true && senha == true && camposenha==true && email==true && campoemail==true){
+    if(global_nome==true && global_senha == true && global_camposenha==true && global_email==true && global_campoemail==true){
         document.getElementById("input_envio").disabled = false;
     }else{
         document.getElementById("input_envio").disabled = true;
     }
 }
+
+

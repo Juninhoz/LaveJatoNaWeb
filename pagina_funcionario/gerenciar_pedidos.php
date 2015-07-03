@@ -4,6 +4,8 @@
     require_once "funcoes_func.php";
     require_once "sessao_func.php";
     
+    verificaSessao($_SESSION['nome_usuario']);
+
     @$select = $_GET['select'];
 
 ?>

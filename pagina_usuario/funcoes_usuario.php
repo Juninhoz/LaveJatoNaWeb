@@ -46,11 +46,8 @@ function mostrarUsuariosDebitos($id){
 function alterarDados($id,$nome,$senha){
     
     $sql = mysql_query("UPDATE t_usuarios SET nome_usuario = '$nome', senha = '$senha' WHERE cod_usuario = '$id'");
-    if($sql){
-        echo "testando isso aqui";
+    if($sql){   
     }
-    
-    echo "ENTROU NESSA PORCARIA";
 }
 
 

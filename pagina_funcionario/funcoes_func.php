@@ -204,7 +204,12 @@ function consultaPedidos(){
          echo "<td> $registro[2]</td>";
          echo "<td> $registro[3]</td>";
          echo "<td> $registro[4]</td>";
-         echo "<td> $registro[5] </td></tr>";
+        if($registro[5]=='Aceito'){
+         echo "<td style='background-color: #66FF33;'> $registro[5] </td></tr>";
+        }else{
+            echo "<td> $registro[5] </td></tr>";
+        }
+            
     }
     echo "</table>"; 
     }
@@ -362,4 +367,13 @@ function pesquisaGerencia($select){
          echo "<a class='return' href='gerenciar_pedidos.php'>Voltar</a>";
        }       
     }
+
+function verificaSessao($sessao){
+    
+    if($sessao != 'admin'){
+        header("Location: ..\\index.php");
+    }
+}
+
+
 ?>

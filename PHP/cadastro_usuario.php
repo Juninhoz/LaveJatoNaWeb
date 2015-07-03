@@ -10,6 +10,9 @@
     $usuario_sexo = $_POST["sexo"];
     $erro = 0;
     
+    /*Criptografando a senha.*/
+    $senha_user = md5($senha_usuario);
+    
     /*Removendo espaços do nome*/
     $nome_usuario = rtrim($nome_usuario);
     $nome_usuario = ltrim($nome_usuario);
@@ -27,7 +30,7 @@
 
     include "conexao_banco.php";
     
-    $sql = mysql_query("INSERT INTO T_USUARIOS(nome_usuario,senha,email,sexo)VALUES('$nome_usuario','$senha_usuario','$usuario_email','$usuario_sexo')");
+    $sql = mysql_query("INSERT INTO T_USUARIOS(nome_usuario,senha,email,sexo)VALUES('$nome_usuario','$senha_user','$usuario_email','$usuario_sexo')");
     
 ?>
 

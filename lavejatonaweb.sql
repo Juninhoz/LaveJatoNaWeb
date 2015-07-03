@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Jun-2015 às 03:15
+-- Generation Time: 03-Jul-2015 às 19:12
 -- Versão do servidor: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -48,13 +48,6 @@ CREATE TABLE IF NOT EXISTS `t_pagamento` (
   `id_pedido` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `t_pagamento`
---
-
-INSERT INTO `t_pagamento` (`titular_cartao`, `numero_cartao`, `data_valid`, `cod_seg`, `id_pedido`) VALUES
-('junior duda', '9999999999999999', '10/2015', '999', 4);
-
 -- --------------------------------------------------------
 
 --
@@ -68,19 +61,7 @@ CREATE TABLE IF NOT EXISTS `t_servico` (
   `valor` int(11) NOT NULL,
   `status_pagamento` varchar(30) NOT NULL DEFAULT 'Pendente',
   `status_pedido` varchar(20) NOT NULL DEFAULT 'Em analise'
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `t_servico`
---
-
-INSERT INTO `t_servico` (`id_usuario`, `id_pedido`, `data`, `valor`, `status_pagamento`, `status_pedido`) VALUES
-(1, 4, '2015-06-27', 10, 'Pago', 'Aceito'),
-(1, 5, '2015-06-27', 20, 'Pendente', 'Rejeitado'),
-(6, 6, '2015-06-28', 15, 'Pendente', 'Aceito'),
-(1, 7, '2015-06-29', 1, 'Pendente', 'Em analise'),
-(10, 8, '2015-06-29', 105, 'Pendente', 'Em analise'),
-(1, 9, '2015-06-30', 40, 'Pendente', 'Em analise');
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -95,18 +76,15 @@ CREATE TABLE IF NOT EXISTS `t_usuarios` (
   `nome` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
   `sexo` char(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `t_usuarios`
 --
 
 INSERT INTO `t_usuarios` (`cod_usuario`, `nome_usuario`, `senha`, `nome`, `email`, `sexo`) VALUES
-(1, 'dudinha', '123456', '', 'juniorrock007@gmail.com', 'M'),
-(6, 'Neto duda', 'testando', '', 'testando@gmail.com', 'M'),
 (8, 'Admin', 'admin', '', 'admin@gmail.com', 'M'),
-(9, 'Juninhoz duda', '123456', '', 'juniorrock007@gmail.com', 'M'),
-(10, 'Alexsandro', '123456', '', 'alex.santos@hotmail.com', 'M');
+(9, 'Junior duda', '123456', '', 'juniorrock007@gmail.com', 'M');
 
 --
 -- Indexes for dumped tables
@@ -122,7 +100,7 @@ ALTER TABLE `t_mensagens`
 -- Indexes for table `t_pagamento`
 --
 ALTER TABLE `t_pagamento`
- ADD PRIMARY KEY (`numero_cartao`), ADD KEY `FK_ID_PRODUTO` (`id_pedido`);
+ ADD PRIMARY KEY (`id_pedido`);
 
 --
 -- Indexes for table `t_servico`
@@ -144,12 +122,12 @@ ALTER TABLE `t_usuarios`
 -- AUTO_INCREMENT for table `t_servico`
 --
 ALTER TABLE `t_servico`
-MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `t_usuarios`
 --
 ALTER TABLE `t_usuarios`
-MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `cod_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --

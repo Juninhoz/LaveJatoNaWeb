@@ -28,12 +28,12 @@
 				
 				<div id="centro">
 				
-					<h3>Cadastro de usuário</h3>
+					<h3 class="cadastro">Cadastro de usuário</h3>
 					
 					<form name="cadastro_user" action="..\PHP\cadastro_usuario.php" method="post">
 					
                     <label>Nome:</label><br><input onchange="ValidaCampoNome('name');ativarEnvio();" id="name" class="digit" type="text" size="40" name="Nome_usuario">
-                        <img src="" id="img00">  
+                        <img src="" id="img00">
                     <br>   
 					<label>Senha:</label><br><input onchange="ValidaCampoSenha('password');ativarEnvio();" id="password" class="digit" type="password" size="40" name="Senha_usuario">
                      <img src="" id="img01">  
@@ -41,7 +41,7 @@
 					<label>Confirme sua senha:</label><br><input onchange="VerificaCampoSenha('confirmPassword');ativarEnvio();" id="confirmPassword" class="digit" type="password" size="40" name="Senha_confirm">
                         <img src="" id="img02">
                         <br>
-					<label>Email:</label><br><input onchange="ValidaCampoEmail('email');ativarEnvio()" id="email" class="digit" type="text" size="40" name="Email_usuario">
+					<label>Email:</label><br><input onchange="ValidaCampoEmail('email');ativarEnvio();" id="email" class="digit" type="text" size="40" name="Email_usuario">
                     <img src="" id="img03">    
                     <br>
 					<label>Digite novamente o Email:</label><br><input onchange="VerificaCampoEmail('confirmEmail');ativarEnvio();" id="confirmEmail" class="digit" type="text" size="40" name="Email_confirm">

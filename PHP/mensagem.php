@@ -38,7 +38,7 @@
                                                                                         if($sql){
 
                                                                                             echo "<span class='sucess'>Mensagem Enviada</span>";
-                                                                                            echo "<meta http-equiv=refresh content='3;url=..\\pagina_usuario\\pagina_usuario.php'>";
+                                                                                            echo "<meta http-equiv=refresh content='3;url=..\\index.php'>";
                                                                                             }else{
                                                                                             echo "Erro ao Enviar a mensagem";
                                                                                             }

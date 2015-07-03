@@ -8,6 +8,8 @@
     $nome_usuario = $_POST['nome'];
     $senha_usuario = $_POST['senha'];
     
+    $senha = md5($senha_usuario);
+    
     $resultado = mysql_query("SELECT * FROM T_USUARIOS WHERE nome_usuario = '$nome_usuario'");
     $id = mysql_query("SELECT cod_usuario FROM T_USUARIOS WHERE nome_usuario = '$nome_usuario'");
     
@@ -15,7 +17,7 @@
 
     $linhas = mysql_num_rows($resultado);
     
-    if((empty($nome_usuario) || empty($senha_usuario)) || $linhas==0){
+    if((empty($nome_usuario) || empty($senha)) || $linhas==0){
         
     echo "<html>
 	<head>
@@ -59,7 +61,7 @@ content='2;url=..\\index.php'>";
     
     else{
         
-        if($senha_usuario != mysql_result($resultado,0,"senha")){
+        if($senha != mysql_result($resultado,0,"senha")){
              echo "<html>
 	<head>
 		<meta charset='UTF-8'/>
@@ -110,6 +112,7 @@ content='2;url=..\\index.php'>";
             }else{
             header("Location: ..\\pagina_usuario\\pagina_usuario.php");
                 }
-            }
-    }
+        }
+}
+
 ?>

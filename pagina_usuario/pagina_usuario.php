@@ -6,6 +6,7 @@
     require_once "sessao_usuario.php";
 
     $data = date("d");
+
 ?>
 
 <html>

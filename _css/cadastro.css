@@ -120,7 +120,7 @@ footer#rodape p {
 div#centro{
 	padding-top: 20px;
 	padding-bottom: 20px;
-	width: 800px;
+	width: 840px;
 }
 
 form{
@@ -202,3 +202,9 @@ img#img04{
     top: 8px;
 }
 
+h3.cadastro{
+    border: 3px solid #6699FF;
+    padding: 5px 3px 5px 10px;
+    border-radius: 5px 5px;
+    margin: auto;
+}

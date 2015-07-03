@@ -60,7 +60,7 @@
 							
 						echo "</form>        
 						<br>
-						<p>Nao possui cadastro?<b><a href='lavejatonaweb\cadastro.html'> Cadastre-se aqui!</a></b></p>
+						<p>Nao possui cadastro?<b><a href='cadastro.html'> Cadastre-se aqui!</a></b></p>
 						<p>Esqueceu sua senha? <b>Recupere aqui!</b></p>
 					</fieldset>";
             }
