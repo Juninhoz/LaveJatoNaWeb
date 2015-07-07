@@ -7,9 +7,9 @@
 
     $nome_usuario = $_POST['nome'];
     $senha_usuario = $_POST['senha'];
-    
+        
     $senha = md5($senha_usuario);
-    
+
     $resultado = mysql_query("SELECT * FROM T_USUARIOS WHERE nome_usuario = '$nome_usuario'");
     $id = mysql_query("SELECT cod_usuario FROM T_USUARIOS WHERE nome_usuario = '$nome_usuario'");
     
@@ -107,7 +107,7 @@ content='2;url=..\\index.php'>";
             $_SESSION['senha_usuario']=$senha_usuario;
             $_SESSION['id']=$identificador;
             
-            if($nome_usuario == 'admin' || $senha_usuario == 'admin'){
+            if($nome_usuario == 'admin' || $nome_usuario == 'Admin' || $senha_usuario == 'admin'){
             header("Location: ..\\pagina_funcionario\\pagina_funcionario.php");
             }else{
             header("Location: ..\\pagina_usuario\\pagina_usuario.php");
